@@ -1,0 +1,42 @@
+:root {
+  --color: black;
+  --font-familyCairo: 'Cairo', sans-serif;
+  --font-familyRoboto: 'Roboto', sans-serif;
+  --font-familyNotoNastaliqUrdu:Noto Nastaliq Urdu
+}
+.products{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  max-width: 80%;
+  margin: auto;
+  padding: 0px 0px 100px 0px;
+  font-family: var(--font-familyRoboto);
+}
+.homePrductsContainer{
+  max-width: 90%;
+  margin: auto;
+}
+.homePrductsContainer h2 ,p{
+  font-family:var(--font-familyRoboto) ;
+}
+
+.products__item{
+  box-shadow: 2px 2px 2px 2px lightgray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding:20px 10px 10px 10px;
+  width: 300px;
+}
+.products__item .product-img{
+  width: 150px;
+}
+.cartBtn{
+  background-color: #2F9C95;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+/* media query */

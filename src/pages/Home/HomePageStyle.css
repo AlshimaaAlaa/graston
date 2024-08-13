@@ -1,0 +1,40 @@
+:root{
+  --color:black;
+  --fontFamilyCairo:Cairo;
+  --fontFamilyRoboto: ;
+}
+.aboutUs{
+  max-width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.aboutUs__item1 p{
+  line-height: 35px;
+  font-family: var(--fontFamilyRoboto);
+  width: 60%;
+}
+.aboutUs__item1 h1{
+  font-weight: bold;
+  color: #323232;
+  font-family: var(--font-familyRoboto);
+}
+.aboutUs__item1 h1 + p:nth-of-type(2) {
+  color: #323232;
+  font-family: var(--font-familyRoboto);
+}
+.aboutUs__item2 div{
+  background-color:#2F9C95;
+  width: 212px;
+  height: 210px;
+  margin-top: 10px;
+}
+.btnDiv button{
+  width: 150px;
+}
+
+/*  */
+
+
+/* media query */

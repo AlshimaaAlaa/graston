@@ -1,0 +1,138 @@
+:root {
+  --color: black;
+  --font-familyCairo: "Cairo", sans-serif;
+  --font-familyRoboto: "Roboto", sans-serif;
+  --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
+}
+
+/* rest password*/
+.RestPasswordContainer__h5,
+.restPasswordContainer__items__h5 {
+  color: #2f9c95;
+  font-family: var(--font-familyRoboto);
+}
+.RestPasswordContainer__P,
+.restPasswordContainer__items__p {
+  color: #2f9c95;
+  font-family: var(--font-familyRoboto);
+}
+.restPasswordContainer__items__p {
+  width: 350px;
+}
+.RestPasswordContainer__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 40%;
+  margin: auto;
+  padding: 50px 0px 50px 0px;
+  font-family: var(--font-familyRoboto);
+}
+.RestPasswordForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.RestPasswordForm__input,
+.restPassword {
+  border: none;
+  padding: 12px 25px 12px 25px;
+  box-shadow: 1px 1px 1px 1px lightgray;
+  border-radius: 5px;
+  width: 390px;
+}
+.RestPasswordForm__input:focus {
+  outline: none;
+}
+.restPassword:focus {
+  outline: none;
+}
+.saveInfo button {
+  width: 390px;
+}
+/* rest password */
+.restPasswordContainer__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 40%;
+  margin: auto;
+  padding: 50px 0px 50px 0px;
+  font-family: var(--font-familyRoboto);
+}
+/* media query *
+/* Mobile : 375px => 768px */
+@media screen and (min-width: 100px) and (max-width: 375px) {
+  /* rest password*/
+  .restPasswordContainer__items__h5 {
+    width: 300px;
+  }
+  .RestPasswordContainer__items {
+    border-radius: 20px;
+    max-width: 100%;
+  }
+  .RestPasswordForm__input,
+  .restPassword {
+    width: 320px;
+    background-position-x: 290px;
+  }
+  .saveInfo button {
+    width: 320px;
+  }
+  label {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .RestPasswordContainer__items {
+    border-radius: 20px;
+    max-width: 90%;
+  }
+  .RestPasswordForm__input,
+  .restPassword {
+    width: 320px;
+    background-position-x: 290px;
+  }
+  .saveInfo button {
+    width: 320px;
+  }
+  label {
+    font-size: 20px;
+  }
+}
+/* tablet : 768px => 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .restPasswordContainer__items__p {
+    font-size: 25px;
+  }
+  .RestPasswordContainer__items {
+    border-radius: 20px;
+    max-width: 90%;
+  }
+  .saveInfo button {
+    width: 620px;
+    font-size: 25px;
+    margin-top: 50px;
+  }
+  label {
+    font-size: 30px;
+  }
+  .RestPasswordForm__input,
+  .restPassword {
+    border: none;
+    padding: 12px 25px 12px 25px;
+    box-shadow: 1px 1px 1px 1px lightgray;
+    border-radius: 5px;
+    width: 620px;
+  }
+}
+/* laptop : 1024px => 1440px */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .RestPasswordContainer__items {
+    border-radius: 20px;
+    max-width: 50%;
+  }
+}

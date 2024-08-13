@@ -1,0 +1,340 @@
+:root {
+  --color: black;
+  --font-familyCairo: "Cairo", sans-serif;
+  --font-familyRoboto: "Roboto", sans-serif;
+  --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
+}
+input::placeholder {
+  font-size: 16px;
+}
+/* forgot password (phone number) */
+.forgotPasswordContainer {
+  width: 100%;
+  font-family: var(--font-familyRoboto);
+}
+.forgotPasswordContainer__h4 {
+  color: #2f9c95;
+}
+.forgotPasswordContainer__p {
+  color: #2f9c95;
+  width: 71%;
+  font-size: 10px;
+}
+.forgotPasswordContainer__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-familyRoboto);
+}
+.forgotPasswordContainer__phoneCode {
+  border: none;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  border-radius: 5px;
+  width: 80px;
+}
+.forgotPasswordContainer__phone {
+  border: none;
+  padding: 12px;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 286px;
+}
+.forgotPasswordContainer__phone:focus {
+  outline: none;
+}
+.sendCodeBtn button {
+  width: 390px;
+}
+.verifay {
+  text-decoration: none;
+  font-family: var(--font-familyRoboto);
+  color: #2f9c95;
+}
+/* forgot password (email) */
+.forgotPasswordContainer__h4 {
+  color: #2f9c95;
+}
+.forgotPasswordContainer__P {
+  color: #2f9c95;
+  width: 71%;
+}
+.forgotPasswordContainer__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 40%;
+  margin: auto;
+}
+.forgotPasswordContainer__phoneCode {
+  border: none;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  border-radius: 5px;
+}
+.forgotEmail {
+  border: none;
+  padding: 12px 25px 12px 25px;
+  box-shadow: 1px 1px 1px 1px lightgray;
+  border-radius: 5px;
+  background: url("/public/assets/images/email\ icon.png") no-repeat left;
+  background-size: 20px;
+  background-position: 10px center;
+  padding-left: 40px;
+  width: 390px;
+  box-sizing: border-box;
+}
+.forgotEmail:focus {
+  outline: none;
+}
+/* verifay phone number */
+.VerifayPhoneContainer__h4 {
+  color: #2f9c95;
+}
+.VerifayPhoneContainer__p {
+  color: #2f9c95;
+}
+.VerifayPhoneContainer__inputs input {
+  width: 77.68px;
+  height: 77.68;
+  margin: 10px;
+  padding: 25px;
+  border-radius: 16px;
+  border: none;
+  background-color: #f2f2f2;
+}
+.VerifayPhoneContainer__inputs input:focus {
+  outline: none;
+}
+.VerifayPhoneContainer__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 40%;
+  margin: auto;
+  padding: 50px 0px 0px 0px;
+  font-family: var(--font-familyRoboto);
+}
+.sendCode {
+  color: #2f9c95;
+  font-family: var(--font-familyRoboto);
+}
+.confirmCode button {
+  width: 390px;
+}
+
+/* verifay email */
+.verifayEmailContainer__h4 {
+  color: #2f9c95;
+}
+.verifayEmailContainer__P {
+  color: #2f9c95;
+}
+.verifayEmailContainer__inputs input {
+  width: 77.68px;
+  height: 77.68;
+  margin: 10px;
+  padding: 25px;
+  border-radius: 16px;
+  border: none;
+  background-color: #f2f2f2;
+}
+.verifayEmailContainer__inputs input:focus {
+  outline: none;
+}
+.verifayEmailContainer__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 40%;
+  margin: auto;
+  padding: 50px 0px 0px 0px;
+  font-family: var(--font-familyRoboto);
+}
+.sendCode {
+  color: #2f9c95;
+  font-family: var(--font-familyRoboto);
+}
+.confirmCode button {
+  width: 390px;
+}
+
+/* media query *
+/* Mobile : 375px => 768px */
+@media screen and (min-width: 100px) and (max-width: 375px) {
+  .forgotPasswordContainer__p {
+    width: 340px;
+    font-size: 23px;
+    font-weight: bolder;
+  }
+  .forgotPasswordContainer__phone {
+    width: 240px;
+  }
+  .sendCodeBtn button {
+    width: 330px;
+  }
+  .verifay {
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  /* forgot password (email) */
+  .forgotPasswordContainer__P {
+    width: 100%;
+    font-size: 25px;
+  }
+  .forgotPasswordContainer__items {
+    max-width: 100%;
+  }
+  .forgotEmail {
+    width: 330px;
+  }
+
+  /* verifay phone number */
+  .VerifayPhoneContainer__h4 {
+    font-size: 25px;
+  }
+  .VerifayPhoneContainer__p {
+    font-size: 25px;
+  }
+
+  .VerifayPhoneContainer__inputs input {
+    width: 68px;
+    margin: 5px;
+  }
+  .VerifayPhoneContainer__items {
+    max-width: 100%;
+  }
+  .confirmCode button {
+    width: 330px;
+  }
+  .or {
+    font-size: 25px;
+  }
+  /* verifay email */
+  .verifayEmailContainer__inputs input {
+    margin: 3px;
+  }
+  .verifayEmailContainer__items {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .forgotPasswordContainer__p {
+    width: 340px;
+    font-size: 23px;
+    font-weight: bolder;
+  }
+  .forgotPasswordContainer__phone {
+    width: 240px;
+  }
+  .sendCodeBtn button {
+    width: 330px;
+  }
+  .verifay {
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  /* verifay phone number */
+  .VerifayPhoneContainer__h4 {
+    font-size: 25px;
+  }
+  .VerifayPhoneContainer__p {
+    font-size: 25px;
+  }
+
+  .VerifayPhoneContainer__inputs input {
+    width: 68px;
+    margin: 2px;
+  }
+  .VerifayPhoneContainer__items {
+    max-width: 100%;
+  }
+  .confirmCode button {
+    width: 330px;
+  }
+  /* forgot password (email) */
+  .forgotPasswordContainer__P {
+    width: 100%;
+    font-size: 25px;
+  }
+  .forgotPasswordContainer__items {
+    max-width: 100%;
+  }
+  .forgotEmail {
+    width: 330px;
+  }
+  .or {
+    font-size: 25px;
+  }
+  /* verifay email */
+  .verifayEmailContainer__inputs input {
+    margin: 3px;
+  }
+  .verifayEmailContainer__items {
+    max-width: 100%;
+  }
+}
+/* tablet : 768px => 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .forgotPasswordContainer__p {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .forgotPasswordContainer__phone {
+    width: 400px;
+  }
+  .sendCodeBtn button {
+    width: 500px;
+    font-size: 25px;
+  }
+  .verifay {
+    font-size: 25px;
+    font-weight: bolder;
+    width: 500px;
+  }
+  .label {
+    font-size: 20px;
+  }
+  .forgotPasswordContainer__h4 {
+    font-size: 30px;
+  }
+  /* verifay phone number */
+  .VerifayPhoneContainer__h4 {
+    font-size: 25px;
+    width: 300px;
+  }
+  .VerifayPhoneContainer__p {
+    font-size: 25px;
+  }
+  .VerifayPhoneContainer__inputs input {
+    width: 70px;
+    margin: 15px;
+  }
+  .VerifayPhoneContainer__items {
+    max-width: 100%;
+  }
+  .confirmCode button {
+  font-size: 25px;
+  }
+  /* forgot password (email) */
+  .forgotPasswordContainer__P {
+    width: 100%;
+    font-size: 25px;
+  }
+  .forgotPasswordContainer__items {
+    max-width: 100%;
+  }
+  .forgotEmail {
+    width: 500px;
+  }
+  .or {
+    font-size: 25px;
+  }
+}
+/* laptop : 1024px => 1440px */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+}

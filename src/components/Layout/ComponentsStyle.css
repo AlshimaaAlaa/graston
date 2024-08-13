@@ -1,0 +1,133 @@
+:root {
+  --color: black;
+  --font-familyCairo: "Cairo", sans-serif;
+  --font-familyRoboto: "Roboto", sans-serif;
+  --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
+  --main-color: #2f9c95;
+  --font-familyCairo: "Cairo", sans-serif;
+  --font-familyRoboto: "Roboto", sans-serif;
+  --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
+}
+/* NavBar style */
+.navbarContainer {
+  font-family: var(--font-familyRoboto);
+  box-shadow: 2px 2px 2px 2px gray;
+}
+.nav {
+  background-color: #fff;
+  box-shadow: 3px 3px 3px 3px lightgray;
+  padding: 5px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 70px;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  display: flex;
+  z-index: 10000;
+}
+.navbar {
+  display: flex;
+  max-width: 90%;
+}
+.navbar {
+  width: 90%;
+  margin: auto;
+  max-height: 100%;
+}
+.logo {
+  color: var(--main-color);
+  font-family: var(--font-familyNotoNastaliqUrdu);
+}
+.list {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.list__item__link,
+.link {
+  color: var(--color);
+  text-decoration: none;
+}
+.active {
+  color: var(--main-color);
+}
+.not-active:focus {
+  color: var(--main-color);
+}
+.navbar-brand {
+  font-family: Aref Ruqaa;
+  color: #2f9c95;
+  font-weight: bold;
+  font-size: 30px;
+}
+.navbar button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 120px;
+}
+button:focus {
+  color: #fff;
+  background-color: var(--main-color);
+}
+.language {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.navbar-brand:hover {
+  color: #2f9c95;
+}
+.navbar-nav p.nav-item {
+  width: 120px;
+  border-radius: 5px;
+  margin: 0;
+}
+.navbar-nav > p.nav-item:nth-child(2) {
+  background-color: #2f9c95;
+  text-align: center;
+}
+.navbar-nav p.nav-item:nth-child(2) a {
+  color: #fff;
+}
+/* end of navbar style */
+/* Navbar container */
+.navbarContainer {
+  /* Add any common styles */
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* Add common navbar styles */
+}
+
+/* Directional styles */
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+/* Text direction adjustments */
+.rtl .list,
+.rtl .link {
+  text-align: right;
+}
+
+.rtl .language {
+  direction: rtl;
+}
+
+.rtl .rtl-select {
+  direction: rtl;
+}
+
+/* Add more specific styling based on your layout needs */

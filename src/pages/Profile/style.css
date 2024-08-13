@@ -1,0 +1,78 @@
+:root {
+  --color: black;
+  --font-familyCairo: "Cairo", sans-serif;
+  --font-familyRoboto: "Roboto", sans-serif;
+  --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
+  --main-color: #2f9c95;
+}
+.settingContainer{
+/* display: flex;
+justify-content: center; */
+}
+.settingContainer__item1{
+
+}
+
+.settingContainer__item2 {
+  background-color: #ececec;
+  font-family: var(--font-familyRoboto);
+}
+.contactInfo__form {
+  max-width: 865px;
+  margin: auto;
+}
+.contactInfo__form__item1 {
+  width: 865px;
+  height: 355px;
+  background-color: #fff;
+}
+.contactInfo__form__item2 {
+  width: 865px;
+  height: 192px;
+  background-color: #fff;
+}
+.email {
+  border: none;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  width: 390px;
+  height: 52px;
+  background: url("/public/assets/images/email\ icon.png") no-repeat left;
+  background-size: 20px;
+  background-position: 10px center;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.email:focus,
+#phone_number:focus {
+  outline: none;
+}
+.changeEmail,
+.changePhone,
+.changePassword {
+  background-color: #fff;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  border-radius: 5px;
+  padding: 14px;
+  width: 185px;
+}
+.phone {
+  border: none;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  width: 390px;
+  height: 52px;
+  border-radius: 5px;
+}
+.inputs input {
+  width: 65.68px;
+  height: 65.68;
+  margin: 10px;
+  padding: 25px;
+  border-radius: 16px;
+  border: none;
+  background-color: #f2f2f2;
+}
+.inputs input:focus{
+  outline: none;
+}

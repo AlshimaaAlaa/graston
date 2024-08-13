@@ -1,0 +1,232 @@
+:root {
+  --color: black;
+  --font-familyCairo: "Cairo", sans-serif;
+  --font-familyRoboto: "Roboto", sans-serif;
+  --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
+  --main-color: #2f9c95;
+}
+/* registerAsPatient */
+.registerAsPatient {
+  font-family: var(--font-familyRoboto);
+  display: flex;
+  width: 100%;
+}
+.registerAsPatient__item1 {
+  width: 25%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.name {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  width: 185px;
+}
+#phoneNumber {
+  box-shadow: 2px 2px 2px 2px lightgray;
+  width: 80px;
+  height: 52px;
+  border-radius: 5px;
+}
+#phone_number {
+  width: 286px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px lightgray;
+}
+.registerAsPatient__item1 h2 {
+  font-family: Aref Ruqaa;
+  color: #2f9c95;
+  font-size: 40px;
+}
+input::placeholder {
+  font-size: 13px;
+}
+label {
+  font-size: 14px;
+}
+.registerAsPatient__item2 {
+  background-image: linear-gradient(200.5deg, #2f9c95, #103634);
+  width: 525px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+}
+.registerAsDoctor button {
+  width: 390px;
+  height: 52px;
+  font-weight: bolder;
+  margin-left: 20px;
+}
+.registerAsDoctor-mobile {
+  display: none;
+}
+.nameItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lastName {
+  margin-left: 10px;
+}
+.registerAsDoctor button:hover{
+    background-color: #fff;
+    color: var(--main-color);
+}
+/* media query *
+/* Mobile : 375px => 768px */
+@media screen and (min-width: 100px) and (max-width: 375px) {
+  /* registerAsPatient */
+  .registerAsPatient {
+    display: block;
+  }
+  .registerAsPatient__item1 {
+    width: 100%;
+    margin: auto;
+    padding: 50px;
+  }
+  .nameItems {
+    flex-direction: column;
+  }
+  .lastName {
+    margin-left: 0px;
+  }
+  .label {
+    margin-top: 15px;
+  }
+  .name {
+    width: 330px;
+  }
+  #phoneNumber {
+    width: 85px;
+  }
+  #phone_number {
+    width: 235px;
+  }
+  input::placeholder {
+    text-decoration: none;
+  }
+  .registerAsPatient__item2 {
+    display: none;
+  }
+  .loginOptions {
+    margin-left: 0px;
+  }
+  .registerAsDoctor button {
+    width: 330px;
+  }
+  .registerAsDoctor-mobile {
+    display: block;
+    margin: 0px 10px 100px 10px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  /* registerAsPatient */
+  .registerAsPatient {
+    display: block;
+  }
+  .registerAsPatient__item1 {
+    width: 100%;
+    margin: auto;
+    padding: 50px;
+  }
+  .nameItems {
+    flex-direction: column;
+  }
+  .lastName {
+    margin-left: 0px;
+  }
+  .label {
+    margin-top: 15px;
+  }
+  .name {
+    width: 330px;
+  }
+  #phoneNumber {
+    width: 85px;
+  }
+  #phone_number {
+    width: 235px;
+  }
+  input::placeholder {
+    text-decoration: none;
+  }
+  .registerAsPatient__item2 {
+    display: none;
+  }
+  .loginOptions {
+    margin-left: 0px;
+  }
+  .registerAsDoctor button {
+    width: 330px;
+  }
+  .registerAsDoctor-mobile {
+    display: block;
+    margin: 0px 10px 100px 10px;
+  }
+}
+/* tablet : 768px => 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* registerAsPatient */
+  .registerAsPatient {
+    display: block;
+  }
+  .registerAsPatient__item1 {
+    width: 100%;
+    margin: auto;
+    padding: 50px;
+  }
+  .nameItems {
+    flex-direction: row;
+  }
+  .lastName {
+    margin-left: 15px;
+  }
+  .label {
+    margin-top: 0px;
+  }
+  .name {
+    width: 300px;
+  }
+  #phoneNumber {
+    width: 95px;
+  }
+  #phone_number {
+    width:500px;
+  }
+  .loginOptions button{
+    width: 600px;
+  }
+  input::placeholder {
+    text-decoration: none;
+  }
+  .registerAsPatient__item2 {
+    display: none;
+  }
+  .loginOptions {
+    margin-left: 0px;
+  }
+  .registerAsDoctor button {
+    width: 600px;
+  }
+  .registerAsDoctor-mobile {
+    display: block;
+    margin: 0px 100px 100px 100px;
+  }
+  #password,#email{
+    width: 620px;
+  }
+  .terms{
+    font-size: 20px;
+  }
+}
+/* laptop : 1024px => 1440px */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+}

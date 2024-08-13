@@ -1,0 +1,76 @@
+:root {
+  --color: black;
+  --font-familyCairo: "Cairo", sans-serif;
+  --font-familyRoboto: "Roboto", sans-serif;
+}
+.MintButton {
+  background-color: #2f9c95;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  font-family: var(--font-familyRoboto);
+  border-radius: 3px;
+  margin-top: 30px;
+  color: #fff;
+}
+.MintButton:hover {
+  background-color: #2f9c95;
+}
+.lightBtn {
+  background-color: white;
+  color: #2f9c95;
+  cursor: pointer;
+  font-family: var(--font-familyRoboto);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.lightBtn:hover {
+  background-color: #fff;
+  color: #2f9c95;
+}
+
+/* General modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modalContent{
+  width: 449px;
+  /* height: 390px; */
+  background-color: #fff;
+  font-family: var(--font-familyRoboto);
+  border-radius: 24px;
+}
+.modal-content {
+  padding: 0px 10px 10px 0px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modalLoginBtn button {
+  width: 270.15px;
+}
+.forgotPasswordContainer {
+  transition: opacity 0.3s;
+}
+
+.forgotPasswordContainer.modal-open {
+  opacity: 0.5;
+}
