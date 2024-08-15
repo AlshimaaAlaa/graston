@@ -6,8 +6,8 @@ import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
 import MintButton from "../../../Common/MintButton";
 import CreateNewPassword from "../../RestPassword/CreateNewPassword";
-
-function Settings() {
+import DoctorSideBar from "../../../Common/DoctorSideBar";
+function SettingsDoctor() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
@@ -49,10 +49,8 @@ function Settings() {
   };
 
   return (
-    <div className={`settingContainer ${showModal ? "modal-open" : ""}`}>
-      <div className="settingContainer__item1">
-        {/* <h3>{t('patientName')}</h3> */}
-      </div>
+    <div className={`settingContainer d-flex ${showModal ? "modal-open" : ""}`}>
+      <DoctorSideBar/>
       <div className="settingContainer__item2 p-5 mt-1">
         <Formik
           initialValues={initialValues}
@@ -61,7 +59,7 @@ function Settings() {
         >
           {() => (
             <Form className="contactInfo__form ">
-              <h2 className="ps-2 pb-3 pt-5 fw-bolder">{t("contactInfo")}</h2>
+              <h2 className="ps-5 pb-3 fw-bolder">{t("contactInfo")}</h2>
               <div className="contactInfo__form__item1 p-5 ">
                 <div className="d-flex align-items-center">
                   <div>
@@ -146,9 +144,9 @@ function Settings() {
                   </div>
                 </div>
               </div>
-              <h2 className="mt-4 fw-bolder">{t("security")}</h2>
+              <h2 className="mt-5 ps-5 fw-bolder">{t("security")}</h2>
 
-              <div className="contactInfo__form__item2 p-5  mt-4 d-flex align-items-center">
+              <div className="contactInfo__form__item2 p-5   d-flex align-items-center">
                 <div className="position-relative">
                   <label
                     htmlFor="password"
@@ -367,9 +365,14 @@ function Settings() {
         {modalContent === "confirmNewPassword" && (
           <div className="d-flex justify-content-center align-items-center flex-column p-4 mt-5">
             <div>
-              <img src="/assets/images/Group 481323.png" alt="confirm new password" width={""} height={""}/>
+              <img
+                src="/assets/images/Group 481323.png"
+                alt="confirm new password"
+                width={""}
+                height={""}
+              />
             </div>
-           <p>{t('confirmPasswordP')}</p>
+            <p>{t("confirmPasswordP")}</p>
           </div>
         )}
       </Modal>
@@ -377,4 +380,4 @@ function Settings() {
   );
 }
 
-export default Settings;
+export default SettingsDoctor;

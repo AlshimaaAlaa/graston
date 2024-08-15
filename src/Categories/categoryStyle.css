@@ -1,0 +1,27 @@
+:root {
+  --color: black;
+  --font-familyCairo: "Cairo", sans-serif;
+  --font-familyRoboto: "Roboto", sans-serif;
+  --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
+  --main-color: #2f9c95;
+}
+.categoriesContainer{
+    font-family: var(--font-familyRoboto);
+    display: flex;
+    justify-content: center;
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.categories__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 216.63px;
+  height: 224.1px;
+  background-color: rgba(47, 156, 149, 0.1);
+  border-radius: 8px;
+}

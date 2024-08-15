@@ -4,9 +4,6 @@
   --font-familyRoboto: "Roboto", sans-serif;
   --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
   --main-color: #2f9c95;
-  --font-familyCairo: "Cairo", sans-serif;
-  --font-familyRoboto: "Roboto", sans-serif;
-  --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
 }
 /* NavBar style */
 .navbarContainer {
@@ -92,42 +89,13 @@ button:focus {
 .navbar-nav p.nav-item:nth-child(2) a {
   color: #fff;
 }
-/* end of navbar style */
-/* Navbar container */
-.navbarContainer {
-  /* Add any common styles */
-}
 
-/* Navbar styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  /* Add common navbar styles */
-}
 
-/* Directional styles */
-.rtl {
-  direction: rtl;
-}
 
-.ltr {
-  direction: ltr;
+/* footer style */
+.footerContainer{
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 20px;
+  font-family: var(--font-familyRoboto);
 }
-
-/* Text direction adjustments */
-.rtl .list,
-.rtl .link {
-  text-align: right;
-}
-
-.rtl .language {
-  direction: rtl;
-}
-
-.rtl .rtl-select {
-  direction: rtl;
-}
-
-/* Add more specific styling based on your layout needs */

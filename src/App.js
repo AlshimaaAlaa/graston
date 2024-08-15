@@ -3,7 +3,6 @@ import "./App.css";
 import Navbar from "./components/Layout/Navbar";
 import Home from "./pages/Home/Home";
 import LoginPage from "./pages/LoginPage/LoginPage";
-// import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import RegisterAsPatient from "./pages/RegisterPage/RegisterAsPatient";
 import RegisterAsDoctor from "./pages/RegisterPage/RegisterAsDoctor";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword(phoneNumber)";
@@ -21,6 +20,8 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import enTranslation from "./Translate/en.json";
 import arTranslation from "./Translate/ar.json";
+import SettingsDoctor from "./pages/Profile/DoctorProfileItems/SettingsDoctor";
+import SettingsPatient from "./pages/Profile/PatientProfileItems/Settings.js";
 function App() {
   i18n
     .use(initReactI18next)
@@ -48,7 +49,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/LoginPage" element={<LoginPage />} />
-          {/* <Route path="/RegisterPage" element={<RegisterPage />} /> */}
           <Route path="/RegisterAsPatient" element={<RegisterAsPatient />} />
           <Route path="/RegisterAsDoctor" element={<RegisterAsDoctor />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
@@ -63,6 +63,8 @@ function App() {
           <Route path="/PatientProfile" element={<PatientProfile />} />
           <Route path="/NurseProfile" element={<NurseProfile />} />
           <Route path="/RestPassword" element={<RestPassword />} />
+          <Route path="/SettingsDoctor" element={<SettingsDoctor/>}/>
+          <Route path="/SettingsPatient" element={<SettingsPatient/>}/>
         </Routes>
       </BrowserRouter>
     </Provider>

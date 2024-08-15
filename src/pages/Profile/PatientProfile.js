@@ -1,210 +1,287 @@
-import React, { useState } from 'react';
-import './style.css';
-import MintButton from '../../Common/MintButton';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import "./style.css";
+import MintButton from "../../Common/MintButton";
+// import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import PatientSideBar from "../../Common/PatientSideBar";
+
 function PatientProfile() {
-  
-  const [selectGender , setGender] =  useState('');
-  const handleGenderType = (gender)=>{
-    setGender(gender)
-  }
+  const { t } = useTranslation();
+  const initialValues = {
+    nationality_id: "",
+    first_name: "",
+    last_name: "",
+    nationality: "",
+    country: "",
+    city: "",
+    date_of_birth: "mm/dd/yyyy",
+    gender: "",
+    chronic_diseases: null,
+    medical_report: null,
+  };
+
+  const validationSchema = Yup.object({
+    first_name: Yup.string().required("required*"),
+    last_name: Yup.string().required("required*"),
+    nationality_id: Yup.number()
+      .required("required")
+      .test(
+        "len",
+        "Must be exactly 11 digits",
+        (val) => val && val.toString().length === 11
+      ),
+    nationality: Yup.string().required("required*"),
+    date_of_birth: Yup.date().required("required*"),
+    country: Yup.string().min(3, "At least 3 letters").required("Required*"),
+    city: Yup.string().min(3, "At least 3 letters").required("required*"),
+    gender: Yup.string().required("Required"),
+
+    chronic_diseases: Yup.mixed()
+      .nullable()
+      .notRequired()
+      .test("fileFormat", "Only PDF files are accepted", (value) => {
+        if (!value) return true; // Allow empty values
+        return value && value.type === "application/pdf";
+      }),
+
+    medical_report: Yup.mixed()
+      .nullable()
+      .notRequired()
+      .test("fileFormat", "Only PDF files are accepted", (value) => {
+        if (!value) return true; // Allow empty values
+        return value && value.type === "application/pdf";
+      }),
+  });
+
+  const onSubmit = async (values) => {
+    console.log(values);
+  };
+
   return (
-    <div className='patientProfileContainer'>
-      {/* profile item 1 */}
-      <div className='patientProfileContainer__item1'>
-        <h4 className='fw-bolder mt-5'>Hello <span className='text-decoration-none fw-bolder ms-2 me-2 mt-3'>Ahmed</span>!</h4>
-        <p style={{color:"#2f9c95"}}>Ahmad@gmail.com</p>
+    <div className="patientProfileContainer d-flex">
+      <PatientSideBar />
 
-        {/* profile items */}
-        <div className='profileSettings mt-5'>
-          <div className='d-flex align-items-center justify-content-between'>
-            <div
-              className='d-flex'
-            >
-              <img
-                src='/assets/svg/🦆 icon _person_.svg'
-                alt='profile'
-              />
-              <p className='fw-bolder ms-3'>
-                Profile
-              </p>
-            </div>
-          </div>
-          <div
-            className='d-flex align-items-center'
-          >
+      <div className="patientProfileContainer__item2 mt-1">
+        <div className="position-relative mb-4">
+          <div className="position-relative">
             <img
-              src='/assets/svg/Vector.svg'
-              alt='fav'
+              src="/assets/images/Group 481328.png"
+              alt="doctor img"
+              width={"128px"}
+              height={"128px"}
             />
-            <p className='mt-3 ms-3 fw-bolder'>
-              Favorites
-            </p>
           </div>
-          <div
-            className='d-flex align-items-center'
-          >
+          <div className="position-absolute add-img">
             <img
-              src='/assets/images/Group 481330.png'
-              alt='payment'
+              src="/assets/images/Frame 119.png"
+              alt="add img"
+              width={"57px"}
+              height={"57px"}
             />
-            <p  className='mt-3 ms-3 fw-bolder'>
-              Payment
-            </p>
-          </div>
-          <div
-            className='d-flex align-items-center'
-          >
-            <img
-              src='/assets/images/support.png'
-              alt='help support'
-            />
-            <p  className='mt-3 ms-3 fw-bolder'>
-              Help Support
-            </p>
-          </div>
-          <div
-            className='d-flex align-items-center'
-            
-          >
-            <img
-              src='/assets/images/vector (1).png'
-              alt='settings'
-              
-            />
-            <p  className='mt-3 ms-3 fw-bolder'>
-              <Link to={'/Settings'}>
-              Settings
-              </Link>
-            
-            </p>
-          </div>
-          <div
-            className='d-flex align-items-center'
-          >
-            <img
-              src='/assets/images/vector (2).png'
-              alt='privacy policy'
-            />
-            <p  className='mt-3 ms-3 fw-bolder'>
-              Privacy Policy
-            </p>
-          </div>
-
-          <hr />
-          <div
-            className='d-flex align-items-center'
-          >
-            <img
-              src='/assets/images/Group.png'
-              alt='logout'
-            />
-            <p
-              className='mt-3 ms-3 fw-bolder'
-            >
-              Log Out
-            </p>
           </div>
         </div>
-      </div>
-      <div className='patientProfileContainer__item2'>
-        <div className='d-flex flex-column align-items-center justify-content-center position-relative'>
-          <div className='position-relative'>
-            <img src='/assets/images/Group 481328.png' alt='patient img' width={"150px"} height={"165.42px"} />
-          </div>
-          <div className='position-absolute add-image'>
-            <img src='/assets/images/Frame 119.png' alt='add img' width={"60px"} height={"60px"} />
-          </div>
-        </div>
-        <form className='patient-info mt-5'>
-          {/* 1 */}
-          <div className='d-flex align-items-center'>
-            <div className='d-flex flex-column'>
-              <label className='fw-bolder mb-3'>Nationality ID</label>
-              <input placeholder='3333111100005555' className='national me-5' />
-            </div>
-            <div className='d-flex'>
-              <div className='d-flex flex-column'>
-                <label className='fw-bolder mb-3'>First Name</label>
-                <input placeholder='Ahmed' className='nameFiled me-3' />
+        <Formik
+          initialValues={initialValues}
+          onSubmit={onSubmit}
+          validationSchema={validationSchema}
+        >
+          <Form>
+            <div className="d-flex mt-5">
+              <div>
+                <label htmlFor="nationality" className="d-block fw-bolder mb-2">
+                  {t("nationalId")}
+                </label>
+                <Field
+                  placeholder="3333111100005555"
+                  name="nationality"
+                  id="nationality"
+                  className="national me-5"
+                />
+                <ErrorMessage
+                  name="nationality"
+                  className="text-danger fw-bolder"
+                  component="div"
+                />
               </div>
-              <div className='d-flex flex-column'>
-                <label className='fw-bolder mb-3'>Last Name</label>
-                <input placeholder='Mohammed' className='nameFiled' />
+              <div classNam="">
+                <label htmlFor="firstName" className="d-block mb-2 fw-bolder">
+                  {t("register.firstName")}
+                </label>
+                <Field
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                  className="firstname me-3"
+                />
+                <ErrorMessage
+                  name="firstName"
+                  className="text-danger fw-bolder"
+                  component="div"
+                />
+              </div>
+              <div>
+                <label className="d-block mb-2 fw-bolder " htmlFor="lastName">
+                  {t("register.lastName")}
+                </label>
+                <Field
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Last Name"
+                  className="lastname"
+                />
+                <ErrorMessage
+                  name="lastName"
+                  className="text-danger fw-bolder"
+                  component="div"
+                />
               </div>
             </div>
-          </div>
+            <div className="d-flex">
+              <div>
+                <label
+                  className="d-block fw-bolder mt-5 mb-2"
+                  htmlFor="national"
+                >
+                  {t("Nationality")}
+                </label>
+                <Field
+                  placeholder="saudi Arabian"
+                  name="national"
+                  id="national"
+                  className="nationals me-5"
+                />
+              </div>
+              <div>
+                <label
+                  className="d-block fw-bolder mt-5 mb-2"
+                  htmlFor="country"
+                >
+                  {t("Country")}
+                </label>
+                <Field name="country" id="country " className="country me-3" />
+              </div>
 
-          {/* 2 */}
-          <div className='d-flex'>
-            <div className='d-flex flex-column'>
-              <label className='fw-bolder mb-3 mt-3'>Nationality </label>
-              <input placeholder='Saudi Arabian' className='nationall me-5' />
-            </div>
-            <div className='d-flex'>
-              <div className='d-flex flex-column'>
-                <label className='fw-bolder mb-3 mt-3'>Country</label>
-                <input className='city me-3' />
-              </div>
-              <div className='d-flex flex-column'>
-                <label className='fw-bolder mb-3 mt-3'>City</label>
-                <input className='city' />
+              <div>
+                <label className="d-block fw-bolder mt-5 mb-2" htmlFor="city">
+                  {t("city")}
+                </label>
+                <Field name="city" id="city" className="city " />
               </div>
             </div>
-          </div>
 
-          {/* 3 */}
-          <div className='d-flex align-items-center'>
-            <div className='d-flex flex-column'>
-              <label className='mb-3 mt-3 fw-bolder'>Date of birth</label>
-              <input type='date' className='date' />
-            </div>
-            <div className='ms-5'>
-              <label className='fw-bolder mt-3 mb-3'>Gender</label>
-              <div className='d-flex'>
-                <div>
-                  <input
-                    type='radio'
-                    checked={selectGender === 'female'}
-                    onClick={() => handleGenderType('female')}
-                    className='custom-radio'
+            <div className="d-flex">
+              <div>
+                <label
+                  className="d-block fw-bolder mt-5 mb-2"
+                  htmlFor="date_of_birth"
+                >
+                  {t("birthDate")}
+                </label>
+                <Field
+                  name="date_of_birth"
+                  id="date_of_birth"
+                  className="birthDate me-5"
+                  type="date"
+                />
+              </div>
+              <div>
+                <label className="fw-bolder  mt-5 mb-2">{t("Gender")}</label>
+                <div className="d-flex mt-3">
+                  <div className=" d-flex aligin-items-center">
+                    <Field
+                      type="radio"
+                      name="gender"
+                      value="M"
+                      className="custom-radio"
+                    />
+                    <label className="ms-2 fs-6">{t("male")}</label>
+                  </div>
+                  <div className=" d-flex aligin-items-center ms-4">
+                    <Field
+                      type="radio"
+                      name="gender"
+                      value="F"
+                      className="custom-radio"
+                    />
+                    <label className="ms-2 fs-6">{t("female")}</label>
+                    {/* Male */}
+                  </div>
+                  <ErrorMessage
+                    name="gender"
+                    className="text-danger"
+                    component="div"
                   />
-                  <label className='ms-3' style={{ color: "#4A525A" }}>Female</label>
-                </div>
-                <div className='ms-4'>
-                  <input
-                    type='radio'
-                    checked={selectGender === 'male'}
-                    onClick={() => handleGenderType('male')}
-                    className='custom-radio'
-                  />
-                  <label className='ms-3' style={{ color: "#4A525A" }}>Male</label>
                 </div>
               </div>
             </div>
-          </div>
-          {/* 4 */}
-          <div className='d-flex'>
-            <div className='d-flex'>
-              <div className='d-flex flex-column'>
-                <label className='mt-5 mb-3 fw-bolder'>Chronic Diseases </label>
-                <input className='Disease' />
-              </div>
-              <input placeholder='+' className='addDiseae ms-3 text-center' />
-            </div>
 
-            <div className='d-flex ms-5'>
-              <div className='d-flex flex-column'>
-                <label className='mt-5 mb-3 fw-bolder'>Medical Report </label>
-                <input className='Disease' placeholder='Upload Your Medical Report' />
+            <div className="d-flex">
+              <div>
+                <label
+                  htmlFor="certificates"
+                  className="d-block fw-bolder mt-5 mb-2"
+                >
+                  {t("ChronicDiseases")}
+                </label>
+                <div className="file-input-wrapper me-5">
+                  <input
+                    id="certificates"
+                    name="certificates"
+                    type="file"
+                    accept="application/pdf"
+                    className="file-input "
+                    onChange={(event) => {
+                      // handle file change
+                    }}
+                  />
+                  <label
+                    htmlFor="certificates"
+                    className="file-input-label"
+                  ></label>
+                </div>
+                <ErrorMessage
+                  name="certificates"
+                  className="text-danger"
+                  component="div"
+                />
               </div>
-              <input placeholder='+' className='addDiseae ms-3 text-center' />
+
+              <div>
+                <label
+                  htmlFor="certificates"
+                  className="d-block fw-bolder mt-5 mb-2"
+                >
+                  {t("MedicalReport")}
+                </label>
+                <div className="file-input-wrapper">
+                  <input
+                    id="certificates"
+                    name="certificates"
+                    type="file"
+                    accept="application/pdf"
+                    className="file-input"
+                    onChange={(event) => {
+                      // handle file change
+                    }}
+                  />
+                  <label htmlFor="certificates" className="file-input-label">
+                    Upload Your Medical Report
+                  </label>
+                </div>
+                <ErrorMessage
+                  name="certificates"
+                  className="text-danger"
+                  component="div"
+                />
+              </div>
             </div>
-          </div>
-          <div className='save-info'>
-            <MintButton text={"Save"} />
-          </div>
-        </form>
+          </Form>
+        </Formik>
+        <div className="saveBtn">
+          <MintButton text={t("saveBtn")} />
+        </div>
       </div>
     </div>
   );

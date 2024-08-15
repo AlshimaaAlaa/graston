@@ -5,12 +5,147 @@
   --font-familyNotoNastaliqUrdu: Noto Nastaliq Urdu;
   --main-color: #2f9c95;
 }
-.settingContainer{
-/* display: flex;
-justify-content: center; */
+/* patient profile */
+.patientProfileContainer__item2 {
+  background-color: #ececec;
+  font-family: var(--font-familyRoboto);
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 0px 50px 0px;
 }
-.settingContainer__item1{
+.national {
+  border: none;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  width: 300px;
+  height: 52px;
+  background: url("/public/assets/images/Vector.png") no-repeat left;
+  background-size: 20px;
+  background-position: 10px center;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+}
+input:focus {
+  outline: none;
+}
+.firstname,
+.lastname {
+  width: 185px;
+  height: 52px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.nationals {
+  border: none;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  width: 300px;
+  height: 52px;
+  background: url("/public/assets/images/Vector (4).png") no-repeat left;
+  background-size: 20px;
+  background-position: 10px center;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.country,
+.city {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 185px;
+  height: 52px;
+}
+.birthDate {
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+  height: 52px;
+}
+.file-input-wrapper {
+  position: relative;
+  width: 300px;
+  height: 52px;
+}
 
+.file-input {
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.file-input-label {
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.file-input:focus + .file-input-label {
+  color: #333;
+}
+.custom-radio{
+  width: 20px;
+  height: 20px;
+}
+.saveBtn{
+  align-self: baseline;
+  margin-left: 220px;
+}
+.saveBtn button{
+  width: 185px;
+  height: 52px;
+}
+.add-img{
+  bottom: -10px;
+  right:1px;
+}
+.edit:hover{
+  cursor: pointer;
+}
+.specialization{
+  border-radius: 5px;
+  border: none;
+  height: 52px;
+  width: 300px;
+  padding: 10px;
+}
+
+/* settings */
+.settingContainer {
+  font-family: var(--font-familyRoboto);
+}
+.settingContainer__item1 {
+  width: 350px;
+  font-family: var(--font-familyRoboto);
 }
 
 .settingContainer__item2 {
@@ -18,17 +153,19 @@ justify-content: center; */
   font-family: var(--font-familyRoboto);
 }
 .contactInfo__form {
-  max-width: 865px;
+  width: 1071px;
   margin: auto;
 }
 .contactInfo__form__item1 {
   width: 865px;
   height: 355px;
+  margin: auto;
   background-color: #fff;
 }
 .contactInfo__form__item2 {
   width: 865px;
   height: 192px;
+  margin: auto;
   background-color: #fff;
 }
 .email {
@@ -73,6 +210,62 @@ justify-content: center; */
   border: none;
   background-color: #f2f2f2;
 }
-.inputs input:focus{
+.inputs input:focus {
   outline: none;
+}
+.settingContainer h2 {
+  margin-left: 55px;
+}
+.settingsItems div {
+  width: 296px;
+  height: 48px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.settingsItems div p {
+  color: var(--main-color);
+}
+
+
+.nav-item {
+  display: flex;
+  text-decoration: none;
+  color: inherit; 
+  position: relative;
+  padding: 10px 0;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  transition: color 0.3s;
+}
+.nav-text {
+  transition: color 0.3s;
+}
+.nav-item::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 25%;
+  transform: translateY(-50%);
+  width: 16px; 
+  height: 16px;
+  background-image: url('/public/assets/images/Vector (1).png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  color: black;
+}
+.nav-item.active .nav-icon,
+.nav-item:hover .nav-icon {
+  color: black;
+}
+.nav-item:hover::after {
+  opacity: 1; 
 }
