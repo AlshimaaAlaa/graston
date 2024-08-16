@@ -14,7 +14,7 @@ function DoctorSideBar() {
   return (
     <div>
       <div className="settingContainer__item1 p-5">
-        <h3 className="fw-bolder">
+        <h3 className="fw-bolder mt-5">
           {t("patientWelcome")}{" "}
           <span style={{ color: "#2f9c95" }}>{t("DoctorName")}</span>
         </h3>

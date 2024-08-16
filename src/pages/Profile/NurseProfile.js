@@ -89,7 +89,7 @@ function NurseProfile() {
           </div>
         </div>
         <div className="d-flex align-items-center ">
-          <p className="fw-bolder fs-5 mt-3 mb-5 me-3">{t("doctorProfile")}</p>
+          <p className="fw-bolder  mt-3 mb-5 me-3">{t("doctorProfile")}</p>
           <div className="mt-3 mb-5 edit">
             <img src="/assets/images/Component 19.png" alt="edit" />
           </div>
